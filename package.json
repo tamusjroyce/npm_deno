@@ -1,0 +1,34 @@
+{
+  "name": "npm_deno",
+  "version": "1.0.0",
+  "description": "Deno installer to node_modules via npm for adoption and node-based CI pipeline usage",
+  "main": "deno.js",
+  "scripts": {
+    "preinstall": "deno.exe eval '' || npm finstall",
+    "postinstall": "deno upgrade",
+    "finstall": "cd bin && node -e \"if (process.platform !== 'win32') { process.exit(1); }\" && npm run winstall || npm run posixstall || npm run poswgetall && cd ..",
+    "winstall": "PowerShell -Command \"$env:DENO_INSTALL='%CD%'; iwr https://deno.land/x/install/install.ps1 -useb | iex\"",
+    "posixstall": "curl -fsSL https://deno.land/x/install/install.sh | sh ",
+    "poswgetall": "wget -o - https://deno.land/x/install/install.sh | sh",
+    "test": "deno test",
+    "patch-release": "npm version patch && npm publish && git push --follow-tags"
+  },
+  "bin": {
+    "deno": "bin/deno.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tamusjroyce/npm_deno.git"
+  },
+  "keywords": [
+    "deno",
+    "node",
+    "npm"
+  ],
+  "author": "TamusJRoyce",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tamusjroyce/npm_deno/issues"
+  },
+  "homepage": "https://github.com/tamusjroyce/npm_deno#readme"
+}
