@@ -2,7 +2,7 @@
   "name": "npm_deno",
   "version": "1.0.0",
   "description": "Deno installer to node_modules via npm for adoption and node-based CI pipeline usage",
-  "main": "./bin/deno.js",
+  "main": "./bin/denojs.js",
   "scripts": {
     "preinstall": "deno --version || npm run force-install",
     "force-install": "npm run winstall || npm run posixstall || npm run poswgetall",
@@ -12,19 +12,16 @@
     "wgetinstall": "wget -o - https://deno.land/x/install/install.sh | sh",
     "iswin": "node -e \"if (process.platform !== 'win32') { process.exit(1); }\"",
     "isnotwin": "node -e \"if (process.platform === 'win32') { process.exit(1); }\"",
-    "winstall": "npm run iswin && PowerShell -Command \"$env:DENO_INSTALL='%CD%\\bin'; iwr https://deno.land/x/install/install.ps1 -useb | iex\"",
+    "winstall": "npm run iswin && PowerShell -Command \"$env:DENO_INSTALL='%CD%'; iwr https://deno.land/x/install/install.ps1 -useb | iex\"",
     "posixstall": "npm run isnotwin && export DENO_INSTALL=\"${PWD}\" && npm run curlinstall",
     "poswgetall": "npm run isnotwin && export DENO_INSTALL=\"${PWD}\" && npm run wgetinstall",
-    "postinstall": "node ./bin/deno.js upgrade",
-    "start": "node ./bin/deno.js",
-    "test": "node ./bin/deno.js test",
+    "postinstall": "node ./bin/denojs.js upgrade",
+    "start": "node ./bin/denojs.js",
+    "test": "node ./bin/denojs.js test",
     "patch-release": "npm version patch && npm publish && git push --follow-tags"
   },
   "bin": {
-    "deno": "bin/deno.js"
-  },
-  "peerDependencies": {
-    "deno": "."
+    "deno": "bin/denojs.js"
   },
   "repository": {
     "type": "git",

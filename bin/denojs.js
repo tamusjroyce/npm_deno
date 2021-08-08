@@ -1,13 +1,6 @@
 #!/usr/bin/env node
-const { spawnSync } = require('child_process');
-let exitCode = 0;
-try {
-  const child = spawnSync('deno', process.argv.slice(2), { stdio: 'inherit', stdout: 'inherit', stderr: 'inherit' });
-  exitCode = child.status || 0;
-} catch(ex) {
-  console.log(ex);
-  exitCode = 1;
-}
+const deno = require('../denojs.js');
+let exitCode = deno(process.argv.slice(2));
 if (exitCode !== 0) {
   console.log('exit code:', exitCode);
   console.log('');
