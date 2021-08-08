@@ -104,5 +104,6 @@ dist
 .tern-port
 
 # Deno Setup
+deno
 *.exe
 *.zip
