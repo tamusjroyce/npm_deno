@@ -1,0 +1,16 @@
+{
+  "name": "npm_deno",
+  "version": "1.0.1",
+  "lockfileVersion": 2,
+  "requires": true,
+  "packages": {
+    "": {
+      "version": "1.0.1",
+      "hasInstallScript": true,
+      "license": "MIT",
+      "bin": {
+        "deno": "bin/denojs.js"
+      }
+    }
+  }
+}
