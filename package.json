@@ -21,9 +21,10 @@
     "patch-release": "npm version patch && npm publish && git push --follow-tags"
   },
   "bin": {
-    "deno": "bin/deno.js",
-    "deno-linux": "bin/deno",
-    "deno-windows": "bin/deno.exe"
+    "deno": "bin/deno.js"
+  },
+  "peerDependencies": {
+    "deno": "."
   },
   "repository": {
     "type": "git",
