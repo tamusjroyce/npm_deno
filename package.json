@@ -1,6 +1,6 @@
 {
   "name": "npm_deno",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Deno installer to node_modules via npm for adoption and node-based CI pipeline usage",
   "main": "./bin/denojs.js",
   "scripts": {
