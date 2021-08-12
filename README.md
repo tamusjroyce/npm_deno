@@ -10,7 +10,7 @@
 Deno installed to node_modules
 
 Migrating and adopting Deno
-- lint speed improvements
+- lint speed improvements - I recommend - https://github.com/napi-rs/node-rs/
 - source -> micro-utilities
 - node supported pipelines
 
