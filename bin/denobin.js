@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-const deno = require('../denojs.js');
+const deno = require('../denolib.js');
 let exitCode = deno(process.argv.slice(2));
 if (exitCode !== 0) {
   console.log('exit code:', exitCode);

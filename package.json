@@ -2,15 +2,17 @@
   "name": "npm_deno",
   "version": "1.0.1",
   "description": "Deno installer to node_modules via npm for adoption and node-based CI pipeline usage",
-  "main": "./bin/denojs.js",
+  "main": "./denolib.js",
   "scripts": {
-    "postinstall": "node denoinstall.js && node ./bin/denojs.js upgrade",
-    "start": "node ./bin/denojs.js",
-    "test": "node ./bin/denojs.js test",
-    "patch-release": "npm version patch && npm publish && git push --follow-tags"
+    "postinstall": "node install.js",
+    "deno:upgrade": "npx deno upgrade",
+    "start": "npx deno",
+    "test": "npx deno test",
+    "patch-release": "npm version patch && npm publish && git push --follow-tags",
+    "example": "npm run cleanup --prefix ./example && npm install --prefix ./example && npm start --prefix ./example"
   },
   "bin": {
-    "deno": "bin/denojs.js"
+    "deno": "bin/denobin.js"
   },
   "repository": {
     "type": "git",
@@ -18,6 +20,8 @@
   },
   "keywords": [
     "deno",
+    "denobin",
+    "denolib",
     "node",
     "npm"
   ],

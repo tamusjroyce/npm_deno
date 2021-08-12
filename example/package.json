@@ -1,0 +1,18 @@
+{
+  "name": "test_npm_deno",
+  "version": "1.0.0",
+  "description": "Test npm deno package to produce .bin/exe files",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx deno eval \"console.log('begin'); Deno.writeTextFile('./fight.txt', 'KO!'); console.log('finish him'); console.log('...flawless execution of example');\" -- --allow-write",
+    "test": "npm run test --prefix ./node_modules/npm_deno/",
+    "cleanup:posix": "rm -rf ./node_modules && rm -f ./package-lock.json && rm -f fight.txt",
+    "cleanup:win32": "rd /s /q \"node_modules\" && del \"package-lock.json\" /q && del \"fight.txt\" /q || echo \"continue ?\"",
+    "cleanup": "npm run cleanup:posix || npm run cleanup:win32"
+  },
+  "dependencies": {
+    "npm_deno": "file:.."
+  },
+  "author": "TamusJRoyce",
+  "license": "MIT"
+}
