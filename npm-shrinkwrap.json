@@ -9,7 +9,7 @@
       "hasInstallScript": true,
       "license": "MIT",
       "bin": {
-        "deno": "bin/denojs.js"
+        "deno": "bin/denobin.js"
       }
     }
   }

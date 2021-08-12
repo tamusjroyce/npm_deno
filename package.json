@@ -7,9 +7,9 @@
     "postinstall": "node install.js",
     "deno:upgrade": "npx deno upgrade",
     "start": "npx deno",
-    "test": "npx deno test",
-    "patch-release": "npm version patch && npm publish && git push --follow-tags",
-    "example": "npm run cleanup --prefix ./example && npm install --prefix ./example && npm start --prefix ./example"
+    "test": "npm install --prefix ./example && npm run test --prefix ./example",
+    "example": "npm run cleanup --prefix ./example && npm install --prefix ./example && npm start --prefix ./example",
+    "patch-release": "npm version patch && npm publish && git push --follow-tags"
   },
   "bin": {
     "deno": "bin/denobin.js"
