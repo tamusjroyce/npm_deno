@@ -1,6 +1,6 @@
 {
-  "name": "test_npm_deno",
-  "version": "1.0.0",
+  "name": "npm_deno_example",
+  "version": "0.0.0",
   "description": "Test npm deno package to produce .bin/exe files",
   "main": "index.js",
   "scripts": {
