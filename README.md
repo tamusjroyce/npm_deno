@@ -7,7 +7,11 @@
   __/ (  | (  | 
  /__.-'|_|--|_| 
 ```
-Deno installed to node_modules
+[Deno](https://deno.land/) installed to node_modules
+
+### What is deno?
+Node-like tool written in rust and provides binary/native speed improvements and security improvements.
+It is written and supported by the creator of node, Ryan Dahl.
 
 Migrating and adopting Deno
 - lint speed improvements - I recommend - https://github.com/napi-rs/node-rs/
