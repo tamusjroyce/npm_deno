@@ -1,3 +1,6 @@
+https://github.com/kt3k/deno-bin - this is probably a better library and setup. Funny how you can never find the right library with the flood of npm modules out there.
+Work in progress: I will be migrating to this library and building examples that utilize this library.
+
 # npm install deno as a npm_module library
 ```
                 __
